@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "k8s-observability-agent.fullname" . }}
+  labels:
+    {{- include "k8s-observability-agent.labels" . | nindent 4 }}
+data:
+  config.yaml: |
+    service_name: {{ .Release.Name }}
+    log_level: {{ .Values.config.logLevel }}
+    slack:
+        enabled: {{ not (empty .Values.config.secrets.slackToken) }}
+        channel: {{ .Values.config.slack.channel }}
+    github:
+        enabled: {{ not (empty .Values.config.secrets.githubToken) }}
+        repo_owner: {{ .Values.config.github.owner }}
+        repo_name: {{ .Values.config.github.repo }}
+    ai:
+        enabled: {{ not (empty .Values.config.secrets.openaiKey) }}
+        model: "gpt-4-turbo"

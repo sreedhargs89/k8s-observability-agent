@@ -1,0 +1,12 @@
+kubernetes==29.0.0
+requests==2.31.0
+PyYAML==6.0.1
+slack-sdk==3.27.0
+pdpyras==5.1.0
+prometheus-api-client==0.5.4
+openai==1.12.0
+structlog==24.1.0
+pydantic==2.6.1
+python-json-logger==2.0.7
+flask==3.0.2  # For the health check / webhook receiver
+gunicorn==21.2.0

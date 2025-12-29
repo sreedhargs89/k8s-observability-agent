@@ -1,0 +1,29 @@
+service_name: "production-watchdog"
+log_level: "INFO"
+
+slack:
+  enabled: true
+  token: "xoxb-your-token"
+  channel: "#ops-alerts"
+
+pagerduty:
+  enabled: true
+  api_key: "your-pd-key"
+  service_id: "SERVICE123"
+
+github:
+  enabled: true
+  token: "ghp_your_token"
+  repo_owner: "your-org"
+  repo_name: "your-repo"
+
+observability:
+  prometheus_url: "http://prometheus-server.monitoring.svc.cluster.local"
+  loki_url: "http://loki.monitoring.svc.cluster.local"
+  grafana_url: "http://grafana.monitoring.svc.cluster.local"
+  grafana_token: "your-api-key"
+
+ai:
+  enabled: true
+  openai_api_key: "sk-..."
+  model: "gpt-4-turbo"

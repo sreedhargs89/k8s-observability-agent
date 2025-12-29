@@ -1,0 +1,9 @@
+2023-10-27T10:00:01.123Z [info     ] Starting K8s Event Watcher...      logger=src.core.event_monitor
+2023-10-27T10:05:23.456Z [info     ] Detected K8s Warning Event         logger=src.core.event_monitor reason=BackOff message="Back-off restarting failed container"
+2023-10-27T10:05:23.457Z [info     ] Handling Incident                  logger=src.core.agent event={"type": "k8s_failure", "namespace": "default", "pod_name": "checkout-service-5d4f8-rt45z", "reason": "BackOff"}
+2023-10-27T10:05:23.500Z [info     ] Fetching logs for pod              logger=src.integrations.observability pod=checkout-service-5d4f8-rt45z
+2023-10-27T10:05:23.800Z [info     ] Fetching recent commits            logger=src.integrations.github_client repo=checkout-service
+2023-10-27T10:05:24.100Z [info     ] AI Analysis Start                  logger=src.ai.risk_analyzer
+2023-10-27T10:05:26.200Z [info     ] AI Analysis Complete               logger=src.ai.risk_analyzer risk_score=8 analysis="High risk. Commit a1b2c3d changed 'config.json' structure which likely caused JSON parse error in logs."
+2023-10-27T10:05:26.300Z [info     ] Sending Slack Alert                logger=src.integrations.slack_client channel=#ops-alerts
+2023-10-27T10:05:26.500Z [info     ] Creating PagerDuty Incident        logger=src.integrations.pagerduty_client title="Critical: checkout-service-5d4f8-rt45z CrashLoopBackOff"

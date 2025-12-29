@@ -1,0 +1,35 @@
+image:
+  repository: k8s-observability-agent
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  name: ""
+
+podAnnotations: {}
+
+resources:
+  limits:
+    cpu: 200m
+    memory: 256Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+
+config:
+  logLevel: "INFO"
+  secrets:
+    slackToken: ""
+    pdApiKey: ""
+    githubToken: ""
+    openaiKey: ""
+  slack:
+    channel: "#alerts"
+  github:
+    owner: ""
+    repo: ""
