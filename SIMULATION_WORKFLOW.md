@@ -9,7 +9,7 @@ flowchart TD
     Start([Start Simulation]) --> Setup[Setup: Mock Config & Integrations]
     Setup --> Trigger[Trigger Simulated Event: CrashLoopBackOff]
     
-    subgraph Agent Core Logic
+    subgraph AgentCoreLogic [Agent Core Logic]
         Trigger --> Detect[Detect Failure Event]
         Detect --> Gather[Gather Context]
         
