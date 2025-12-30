@@ -14,8 +14,8 @@ flowchart TD
         Detect --> Gather[Gather Context]
         
         subgraph Integrations [Parallel Data Fetching]
-            Gather --> Logs[Fetch Logs (Mocked Loki)]
-            Gather --> Commits[Fetch Recent Commits (Mocked GitHub)]
+            Gather --> Logs["Fetch Logs (Mocked Loki)"]
+            Gather --> Commits["Fetch Recent Commits (Mocked GitHub)"]
         end
         
         Logs & Commits --> AI[AI Risk Analysis]
